@@ -1,4 +1,4 @@
-public class Solution {
+public class NextGreaterElement {
     public int[] nextGreaterElement(int[] findNums, int[] nums) {
         int findnumslen = findNums.length;
         int numslen = nums.length;
