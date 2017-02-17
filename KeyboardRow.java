@@ -5,37 +5,37 @@ public class KeyboardRow {
         } else if (words.length == 0) {
             return words;
         }
-        String firstrow = "qwertyuiop";
-        String secondrow = "asdfghjkl";
-        String thirdrow = "zxcvbnm";
-        List<String> samerowwords = new ArrayList<String>();
+        String firstRow = "qwertyuiop";
+        String secondRow = "asdfghjkl";
+        String thirdRow = "zxcvbnm";
+        List<String> sameRowWords = new ArrayList<String>();
         for (String word : words) {
             if (!word.isEmpty()) {
                 String wordtolowercase = word.toLowerCase();
                 char[] chars = wordtolowercase.toCharArray();
-                if (firstrow.contains("" + chars[0])) {
-                    samerowwords = findWords(chars, firstrow, word, samerowwords);
-                } else if (secondrow.contains("" + chars[0])) {
-                    samerowwords = findWords(chars, secondrow, word, samerowwords);
-                } else if (thirdrow.contains("" + chars[0])) {
-                    samerowwords = findWords(chars, thirdrow, word, samerowwords);
+                if (firstRow.contains("" + chars[0])) {
+                    sameRowWords = findWords(chars, firstRow, word, sameRowWords);
+                } else if (secondRow.contains("" + chars[0])) {
+                    sameRowWords = findWords(chars, secondRow, word, sameRowWords);
+                } else if (thirdRow.contains("" + chars[0])) {
+                    sameRowWords = findWords(chars, thirdRow, word, sameRowWords);
                 }
             } else {
-                samerowwords.add("");
+                sameRowWords.add("");
             }
         }
-        String[] samerow = new String[samerowwords.size()];
-        samerow = samerowwords.toArray(samerowwordsarray);
-        return samerow;
+        String[] sameRowWordsToArray = new String[sameRowWords.size()];
+        sameRowWordsToArray = sameRowWords.toArray(sameRowWordsarray);
+        return sameRowWordsToArray;
     }
     
-    public static List<String> findWords(char[] chars, String row, String word, List<String> samerowwords) {
+    public static List<String> findWords(char[] chars, String row, String word, List<String> sameRowWords) {
         for (int i = 1; i < chars.length; i++) {
             if (!row.contains("" + chars[i])) {
-                return samerowwords;
+                return sameRowWords;
             }
         }
-        samerowwords.add(word);
-        return samerowwords;
+        sameRowWords.add(word);
+        return sameRowWords;
     }
 }
