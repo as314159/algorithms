@@ -24,9 +24,9 @@ public class KeyboardRow {
                 samerowwords.add("");
             }
         }
-        String[] samerowwordsarray = new String[samerowwords.size()];
-        samerowwordsarray = samerowwords.toArray(samerowwordsarray);
-        return samerowwordsarray;
+        String[] samerow = new String[samerowwords.size()];
+        samerow = samerowwords.toArray(samerowwordsarray);
+        return samerow;
     }
     
     public static List<String> findWords(char[] chars, String row, String word, List<String> samerowwords) {
