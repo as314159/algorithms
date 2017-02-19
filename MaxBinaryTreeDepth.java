@@ -7,8 +7,13 @@
  *     TreeNode(int x) { val = x; }
  * }
  */
-public class MaxBinaryTreeDepth {
+public class Solution {
     public int maxDepth(TreeNode root) {
+        if (root == null) {
+            return 0;
+        } else if (root.left == null && root.right == null) {
+            return 1;
+        }
         return findDepth(root, 0, 0);
     }
     
