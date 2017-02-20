@@ -9,15 +9,18 @@
  */
 public class InvertBinaryTree {
     public TreeNode invertTree(TreeNode root) {
-        if (root == null) {
-            return root;
+        return invert(root);
+    }
+    
+    private static TreeNode invert(TreeNode node) {
+        if (node == null) {
+            return node;
         } else {
-            TreeNode leftTreeNode = invertTree (root.left);
-            TreeNode rightTreeNode = invertTree (root.right);
-            TreeNode temp = leftTreeNode;
-            leftTreeNode = rightTreeNode;
-            rightTreeNode = temp;
+            TreeNode leftTreeNode = invert (node.left);
+            TreeNode rightTreeNode = invert (node.right);
+            node.left = rightTreeNode;
+            node.right = leftTreeNode;
         }
-        return root;
+        return node;
     }
 }
