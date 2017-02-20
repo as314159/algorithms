@@ -7,8 +7,11 @@
  *     TreeNode(int x) { val = x; }
  * }
  */
-public class InvertBinaryTree {
+public class Solution {
     public TreeNode invertTree(TreeNode root) {
+        if (root == null || (root.left == null && root.right == null)) {
+            return root;
+        }
         return invert(root);
     }
     
