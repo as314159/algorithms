@@ -1,22 +1,21 @@
 public class FindCharDiff {
     public char findTheDifference(String s, String t) {
-        int slen = s.length();
-        int tlen = t.length();
-        Set<String> tset = new HashSet<String>();
-        for (int i = 0; i < slen; i++) {
-            tset.add("" + s.charAt(i));
-        }
+        char[] schars = s.toCharArray();
+        Arrays.sort(schars);
+        String ssorted = new String(schars);
+        char[] tchars = t.toCharArray();
+        Arrays.sort(tchars);
+        String tsorted = new String(tchars);
         char diff = '\0';
-        boolean diffOnce = false;
-        for (int i = 0; i < tlen; i++) {
-            char currChar = t.charAt(i);
-            if (!tset.contains("" + currChar)) {
-                diffOnce = true;
-                diff = currChar;
-            } else {
-                if (!diffOnce) {
-                    diff = currChar;
+        int tsortedlen = tsorted.length() - 1;
+        for (int i = 0; i <= tsortedlen; i++) {
+            if (i != tsortedlen) {
+                if (tsorted.charAt(i) != ssorted.charAt(i)) {
+                    diff = tsorted.charAt(i);
+                    break;
                 }
+            } else {
+                diff = tsorted.charAt(tsortedlen);
             }
         }
         return diff;
