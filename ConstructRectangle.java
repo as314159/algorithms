@@ -1,4 +1,4 @@
-public class Solution {
+public class ConstructRectangle {
     public int[] constructRectangle(int area) {
         // negative area - illegal
         if (area < 0) {
