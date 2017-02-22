@@ -1,17 +1,17 @@
 public class FizzBuzz {
     public List<String> fizzBuzz(int n) {
-        List<String> fizzbuzz = new ArrayList<String>();
+        List<String> fizzBuzz = new ArrayList<String>();
         for (int i = 1; i <= n; i++) {
             if (i % 3 == 0 && i % 5 == 0) {
-                fizzbuzz.add("FizzBuzz");
+                fizzBuzz.add("FizzBuzz");
             } else if (i % 3 == 0) {
-                fizzbuzz.add("Fizz");
+                fizzBuzz.add("Fizz");
             } else if (i % 5 == 0) {
-                fizzbuzz.add("Buzz");
+                fizzBuzz.add("Buzz");
             } else {
-                fizzbuzz.add("" + i);
+                fizzBuzz.add("" + i);
             }
         }
-        return fizzbuzz;
+        return fizzBuzz;
     }
 }
